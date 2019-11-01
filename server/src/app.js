@@ -7,10 +7,6 @@ app.use(morgan('combined'));
 app.use(express.json());
 app.use(cors());
 
-app.get('/status', (req, res) => {
-  res.send({
-    message: 'Hello World'
-  });
-});
+app.use('/api', require('./controllers'));
 
 app.listen(process.env.PORT || 8081);
